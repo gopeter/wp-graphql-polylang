@@ -22,7 +22,7 @@ class PolylangTypes
             $language_codes[ preg_replace( '/-/', '_', strtoupper( $lang ) ) ] = $lang;
         }
 
-         if ( empty( $langauge_codes ) ) {
+         if ( empty( $language_codes ) ) {
 		    $locale = get_locale();
 		    $language_codes[ preg_replace( '/-/', '_', strtoupper( $locale ) ) ] = [
 		    	'value' => $locale,
