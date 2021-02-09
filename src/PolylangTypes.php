@@ -19,12 +19,12 @@ class PolylangTypes
         $language_codes = [];
 
         foreach (pll_languages_list() as $lang) {
-            $language_codes[strtoupper($lang)] = $lang;
+            $language_codes[ preg_replace( '/-/', '_', strtoupper( $lang ) ) ] = $lang;
         }
 
          if ( empty( $langauge_codes ) ) {
 		    $locale = get_locale();
-		    $language_codes[ strtoupper( $locale ) ] = [
+		    $language_codes[ preg_replace( '/-/', '_', strtoupper( $locale ) ) ] = [
 		    	'value' => $locale,
 			    'description' => __( 'The default locale of the site', 'wp-graphql-polylang' ),
 		    ];
